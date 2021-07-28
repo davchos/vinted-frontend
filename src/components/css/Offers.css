@@ -1,0 +1,28 @@
+.offers-offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.offers-container {
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+  width: 1032px;
+  /* height: 400px; */
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+.offers-offer-image {
+  height: 389px;
+  margin-right: 13px;
+  width: 196px;
+}
+
+.offers-offer img {
+  object-fit: cover;
+  height: 389px;
+  width: 196px;
+  cursor: pointer;
+  margin-top: 5px;
+}

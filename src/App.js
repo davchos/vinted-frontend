@@ -1,11 +1,24 @@
 import "./App.css";
+import Offer from "./container/Offer";
+import Home from "./container/Home";
 
-function App() {
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+const App = () => {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

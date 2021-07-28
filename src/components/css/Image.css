@@ -1,0 +1,29 @@
+.image {
+  width: 100vw;
+  height: 326px;
+  object-fit: cover;
+}
+
+.image-container {
+  position: relative;
+  margin-bottom: 83px;
+}
+
+.image-texte {
+  position: absolute;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  width: 400px;
+  height: 257px;
+  top: 34px;
+  left: 100px;
+  padding: 32px 32px;
+  box-sizing: border-box;
+}
+.image-dechire {
+  position: absolute;
+  bottom: 0px;
+  left: 800px;
+  right: -20px;
+}

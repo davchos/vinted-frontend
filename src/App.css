@@ -1,1 +1,6 @@
 /* Other rules */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
