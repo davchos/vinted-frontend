@@ -28,19 +28,19 @@ const Offers = () => {
         return (
           <div key={index} className="offers-offer">
             <span> {elem.owner.account.username}</span>
-            <div className="offers-offer-image">
-              <Link
-                to={(location) => ({
-                  ...location,
-                  pathname: `/offer/${elem._id}`,
-                })}
-              >
+            <Link
+              to={(location) => ({
+                ...location,
+                pathname: `/offer/${elem._id}`,
+              })}
+            >
+              <div className="offers-offer-image">
                 <img
                   src={elem.product_pictures[0].secure_url}
                   alt="offerItem"
                 />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         );
       })}

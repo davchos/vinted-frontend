@@ -4,9 +4,9 @@ const Image = (props) => {
   return (
     <div className="image-container">
       <div className="image-texte">
-        <p>prprprprpprprp</p>
+        <p>Prêts à faire du tri dans vos placards ?</p>
         <button>Vends maintenant</button>
-        <p>test</p>
+        <p>Découvrir comment ça marche</p>
       </div>
       <svg
         className="image-dechire"

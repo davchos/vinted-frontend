@@ -1,0 +1,27 @@
+.item {
+  height: 100vh;
+
+  background-color: #f5f6f7;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+}
+.item-box {
+  height: 626px;
+  background: white;
+  margin: 100px 0;
+}
+
+.item-box-description {
+  flex-grow: 1;
+  margin-left: 50px;
+}
+
+.item-box-photos {
+  flex-grow: 2;
+}
