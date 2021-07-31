@@ -2,14 +2,21 @@ import "./css/Home.css";
 import Header from "../components/Header";
 import Image from "../components/Image";
 import Offers from "../components/Offers";
-// import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const Home = (props) => {
+const Home = ({ setUserInfo }) => {
+  const [search, setSearch] = useState({
+    priceMin: 0,
+    priceMax: 100000,
+    title: "",
+    sort: "price-desc",
+  });
+
   return (
     <div>
-      <Header />
+      <Header setUserInfo={setUserInfo} search={search} setSearch={setSearch} />
       <Image />
-      <Offers />
+      <Offers search={search} />
     </div>
   );
 };

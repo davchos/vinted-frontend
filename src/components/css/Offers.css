@@ -1,29 +1,57 @@
-.offers-offer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 83px;
-}
 .offers-container {
   display: flex;
   flex-direction: row;
-  overflow: visible;
+  flex-wrap: wrap;
+  /* overflow: hidden; */
   width: 1032px;
-  /* height: 400px; */
-  margin: 0 auto;
-  overflow-x: scroll;
+  margin: 0 auto 50px auto;
+  /* justify-content: space-between; */
 }
-
-.offers-offer-image {
-  height: 389px;
-  margin-right: 13px;
-  width: 196px;
+.offers-offer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 83px;
+  /* margin-right: 5px; */
 }
 
 .offers-offer img {
   object-fit: cover;
+  margin-top: 5px;
+  box-sizing: border-box;
+  object-fit: cover;
   height: 389px;
-  width: 196px;
+  margin-right: 9px;
+  width: 195px;
   cursor: pointer;
   margin-top: 5px;
+}
+
+.offer-price {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+
+.offer-info {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #999999;
+}
+.offer-info-owner {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  padding-left: 10px;
+}
+
+.offers-pages {
+  display: inline-block;
+  margin-left: 5px;
 }

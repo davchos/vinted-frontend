@@ -20,9 +20,8 @@ const Image = (props) => {
           fill="#fff"
         />
       </svg>
-      {/* </div> */}
+
       <img className="image" src="/assets/image_home.jpg" alt="logo" />
-      {/* </div> */}
     </div>
   );
 };
