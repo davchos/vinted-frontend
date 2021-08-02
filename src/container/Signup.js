@@ -5,7 +5,17 @@ import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import { useState } from "react";
 
-const Signup = ({ setUserInfo }) => {
+const Signup = ({
+  setUserInfo,
+  priceMin,
+  priceMax,
+  sort,
+  title,
+  setPriceMin,
+  setPriceMax,
+  setSort,
+  setTitle,
+}) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +48,16 @@ const Signup = ({ setUserInfo }) => {
   };
   return (
     <div>
-      <Header />
+      <Header
+        priceMin={priceMin}
+        priceMax={priceMax}
+        sort={sort}
+        title={title}
+        setPriceMin={setPriceMin}
+        setPriceMax={setPriceMax}
+        setSort={setSort}
+        setTitle={setTitle}
+      />
       <div className="signup-container">
         <span className="signup-title">S'inscrire</span>
         <form onSubmit={handleSubmit}>

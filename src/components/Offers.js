@@ -1,43 +1,51 @@
 import "./css/Offers.css";
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Offers = () => {
+const Offers = ({ priceMin, priceMax, sort, title }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState([1]);
   const [limit, setLimit] = useState(5);
-
+  let query =
+    "?limit=" +
+    limit +
+    "&page=" +
+    page +
+    "&priceMin=" +
+    priceMin +
+    "&priceMax=" +
+    priceMax +
+    "&sort=" +
+    sort;
+  title !== "" && (query += "&title=" + title);
   useEffect(() => {
     const fetchData = async () => {
+      console.log(query);
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers${query}`
           // "https://orion21-vinted.herokuapp.com/offers"
           // "http://localhost:3000/offers"
         );
-
         setData(response.data);
         setTotalPages(Math.ceil(response.data.count / limit));
-
         const arrayLength = Math.ceil(response.data.count / limit);
         const tmp = new Array(arrayLength).fill(1);
-
         setPages(tmp);
-
         setIsLoading(false);
       } catch (error) {
-        //manage 4XX/5XX
+        // Todo manage 4XX/5XX
         console.log(error);
       }
     };
 
     fetchData();
-  }, [page]);
+  }, [page, priceMin, priceMax, sort, title]);
 
   const setPagesArray = () => {
     console.log(data.count);

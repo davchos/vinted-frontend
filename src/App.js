@@ -11,6 +11,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [token, setToken] = useState("");
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(1000);
+  const [title, setTitle] = useState("");
+  const [sort, setSort] = useState("price-asc");
 
   // Manages users authentification through Cookies token.
   // The Cookie is set / unset in this function.
@@ -30,16 +34,56 @@ const App = () => {
       <div>
         <Switch>
           <Route exact path="/">
-            <Home setUserInfo={setUserInfo} />
+            <Home
+              setUserInfo={setUserInfo}
+              priceMin={priceMin}
+              priceMax={priceMax}
+              sort={sort}
+              title={title}
+              setPriceMin={setPriceMin}
+              setPriceMax={setPriceMax}
+              setSort={setSort}
+              setTitle={setTitle}
+            />
           </Route>
           <Route path="/offer/:id">
-            <Offer />
+            <Offer
+              setUserInfo={setUserInfo}
+              priceMin={priceMin}
+              priceMax={priceMax}
+              sort={sort}
+              title={title}
+              setPriceMin={setPriceMin}
+              setPriceMax={setPriceMax}
+              setSort={setSort}
+              setTitle={setTitle}
+            />
           </Route>
           <Route path="/user/signup">
-            <Signup setUserInfo={setUserInfo} />
+            <Signup
+              setUserInfo={setUserInfo}
+              priceMin={priceMin}
+              priceMax={priceMax}
+              sort={sort}
+              title={title}
+              setPriceMin={setPriceMin}
+              setPriceMax={setPriceMax}
+              setSort={setSort}
+              setTitle={setTitle}
+            />
           </Route>
           <Route path="/login">
-            <Login setUserInfo={setUserInfo} />
+            <Login
+              setUserInfo={setUserInfo}
+              priceMin={priceMin}
+              priceMax={priceMax}
+              sort={sort}
+              title={title}
+              setPriceMin={setPriceMin}
+              setPriceMax={setPriceMax}
+              setSort={setSort}
+              setTitle={setTitle}
+            />
           </Route>
         </Switch>
       </div>

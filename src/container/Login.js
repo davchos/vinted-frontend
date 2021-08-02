@@ -6,7 +6,17 @@ import axios from "axios";
 
 import { useHistory } from "react-router-dom";
 
-const Login = ({ setUserInfo }) => {
+const Login = ({
+  setUserInfo,
+  priceMin,
+  priceMax,
+  sort,
+  title,
+  setPriceMin,
+  setPriceMax,
+  setSort,
+  setTitle,
+}) => {
   let history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -38,7 +48,16 @@ const Login = ({ setUserInfo }) => {
   };
   return (
     <div>
-      <Header />
+      <Header
+        priceMin={priceMin}
+        priceMax={priceMax}
+        sort={sort}
+        title={title}
+        setPriceMin={setPriceMin}
+        setPriceMax={setPriceMax}
+        setSort={setSort}
+        setTitle={setTitle}
+      />
       <div className="login-container">
         <span className="login-title"> Se connecter</span>
         <form onSubmit={handleSubmit}>

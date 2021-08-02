@@ -1,11 +1,12 @@
 .header-container {
   width: 1242px;
+  height: 130px;
   margin: 0 auto;
 }
 
 .header-top {
   width: 1242px;
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,7 +16,7 @@
 .header-logo {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 810px;
 }
 .header-search {
   width: 200px;
@@ -29,8 +30,9 @@
   margin-top: 10px;
   color: #c9caca;
   padding-left: 5px;
+  border: none;
 }
-.header-logo input[type="text"] {
+.header-logo input[type="search"] {
   background-color: #f3f4f5;
   border: none;
   border-style: none;
@@ -44,11 +46,74 @@
 }
 
 .header-logo form {
+  display: flex;
+  flex-direction: row;
   margin-left: 10px;
   border: none;
   border-style: none;
 }
+.header-bar {
+  /* border: black X 1px; */
+  display: flex;
+  flex-direction: row;
+  width: 620px;
+  /* height: 70px; */
+}
+.header-sorting {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-left: 20px;
+  width: 130px;
+}
+.header-sorting > span {
+  font-size: 12px;
+  line-height: 12px;
+}
 
+.header-sorting-switch {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  margin-left: 10px;
+  padding-top: 1px;
+  padding-left: 1px;
+  border-radius: 20px;
+  background: #0dadb7;
+}
+
+.header-sorting-switch span {
+  position: absolute;
+  display: block;
+  text-align: center;
+  /* justify-content: center;
+  align-items: center;
+  align-content: center; */
+
+  height: 18px;
+  width: 18px;
+  /* padding: 1px 1px 1px 1px; */
+  background: white;
+  border-radius: 18px;
+  /* margin-top: 1px; */
+}
+
+.header-sorting-up {
+  left: 0px;
+}
+.header-sorting-down {
+  left: 32px;
+}
+
+.header-sorting-switch i {
+  object-fit: fill;
+  /* display: inline-block;
+  width: 18px;
+  height: 18px;
+  /* margin: 1px 1px 1px 1px; */
+  /* background: white;
+  border-radius: 18px;  */
+}
 /* .header {
   margin-bottom: 83px;
 } */
@@ -58,7 +123,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 500px;
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
 .header-button > div {

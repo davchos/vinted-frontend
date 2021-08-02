@@ -1,21 +1,56 @@
 import "./css/Header.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
+import { Range } from "react-range";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
-const Header = ({ setUserInfo }) => {
-  // console.log("Home " + token);
+const Header = ({
+  setUserInfo,
+  priceMin,
+  priceMax,
+  sort,
+  title,
+  setPriceMin,
+  setPriceMax,
+  setSort,
+  setTitle,
+}) => {
+  const [textSearch, setTextSearch] = useState();
+  const history = useHistory();
   const token = Cookies.get("token");
-  console.log(token);
+  const location = useLocation();
 
   const handleDeconnect = () => {
     setUserInfo(null);
+  };
+  const changeSort = (tmp) => {
+    setSort(tmp);
+  };
+  const handleClickArrow = (event) => {
+    if (sort === "price-desc") {
+      changeSort("price-asc");
+    } else {
+      changeSort("price-desc");
+    }
+  };
+
+  const handleSearchText = (event) => {
+    event.preventDefault();
+    setTitle(event.target.value);
+    setTextSearch(event.target.value);
+    console.log(location);
+    if (location.pathname !== "/") {
+      history.push("/");
+      // setTitle(event.target.value);
+
+      // console.log(location);
+    }
   };
 
   return (
     <div className="header">
       <div className="header-top">
         <div className="header-logo">
-          {/* <span> */}
           <Link to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,14 +65,90 @@ const Header = ({ setUserInfo }) => {
               ></path>
             </svg>
           </Link>
-          {/* </span> */}
-          <div className="flex-row header-search ">
-            <i className="fas fa-search sm"></i>
-            <form>
-              <input type="text" onChange={() => {}} />
-            </form>
-          </div>
+          {location.pathname === "/" && (
+            <div>
+              <div className="flex-row header-search ">
+                <i className="fas fa-search sm"></i>
+                <form>
+                  <input
+                    type="search"
+                    value={title}
+                    onChange={handleSearchText}
+                  />
+                </form>
+              </div>
+              {/* {location.pathname === "/" && ( */}
+              {/* // location.pathname !== "/user/signup" && */}
+              {/* // location.pathname !== "/offer/" && ( */}
+              <div className="header-bar">
+                <div className="header-sorting">
+                  <span>Triez par:</span>
+                  <div
+                    className="header-sorting-switch"
+                    onClick={handleClickArrow}
+                  >
+                    <span
+                      className="header-sorting-up"
+                      style={{
+                        visibility: sort === "price-asc" ? "visible" : "hidden",
+                      }}
+                    >
+                      <i className="fas fa-arrow-up fa-xs"></i>
+                    </span>
+                    <span
+                      className="header-sorting-down"
+                      style={{
+                        visibility:
+                          sort !== "price-desc" ? "hidden" : "visible",
+                      }}
+                    >
+                      <i className="fas fa-arrow-down fa-xs header-sorting-down"></i>
+                    </span>
+                  </div>
+                </div>
+                <Range
+                  step={50}
+                  min={0}
+                  max={1000}
+                  values={[priceMin, priceMax]}
+                  onChange={(values) => {
+                    setPriceMin(values[0]);
+                    setPriceMax(values[1]);
+                  }}
+                  renderTrack={({ props, children }) => (
+                    <div
+                      {...props}
+                      style={{
+                        ...props.style,
+                        height: "6px",
+                        width: "90%",
+                        backgroundColor: "#ccc",
+                        marginLeft: "20px",
+                        marginTop: "18px",
+                      }}
+                    >
+                      {children}
+                    </div>
+                  )}
+                  renderThumb={({ props }) => (
+                    <div
+                      {...props}
+                      style={{
+                        ...props.style,
+                        height: "15px",
+                        width: "15px",
+                        backgroundColor: "#0dadb7",
+                        borderRadius: "15px",
+                        outline: "none",
+                      }}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+          )}
         </div>
+
         <div className="header-button">
           {token ? (
             <div>

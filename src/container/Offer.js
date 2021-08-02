@@ -7,7 +7,17 @@ import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 
-const Offer = () => {
+const Offer = ({
+  setUserInfo,
+  priceMin,
+  priceMax,
+  sort,
+  title,
+  setPriceMin,
+  setPriceMax,
+  setSort,
+  setTitle,
+}) => {
   const [item, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -27,7 +37,17 @@ const Offer = () => {
     <span>En cours de chargement... </span>
   ) : (
     <div className="offer-container">
-      <Header />
+      <Header
+        setUserInfo={setUserInfo}
+        priceMin={priceMin}
+        priceMax={priceMax}
+        sort={sort}
+        title={title}
+        setPriceMin={setPriceMin}
+        setPriceMax={setPriceMax}
+        setSort={setSort}
+        setTitle={setTitle}
+      />
       <Item item={item} />
     </div>
   );
