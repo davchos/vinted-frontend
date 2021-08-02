@@ -1,5 +1,5 @@
 import "./css/Header.css";
-import { Link,  useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { Range } from "react-range";
 import Cookies from "js-cookie";
 import { useState } from "react";
@@ -15,7 +15,6 @@ const Header = ({
   setSort,
   setTitle,
 }) => {
-  const [textSearch, setTextSearch] = useState();
   const history = useHistory();
   const token = Cookies.get("token");
   const location = useLocation();
@@ -37,10 +36,10 @@ const Header = ({
   const handleSearchText = (event) => {
     event.preventDefault();
     setTitle(event.target.value);
-    setTextSearch(event.target.value);
     console.log(location);
     if (location.pathname !== "/") {
       history.push("/");
+    }
   };
 
   const handleClickSale = () => {
@@ -76,6 +75,7 @@ const Header = ({
                   />
                 </form>
               </div>
+
               <div className="header-bar">
                 <div className="header-sorting">
                   <span>Triez par:</span>
