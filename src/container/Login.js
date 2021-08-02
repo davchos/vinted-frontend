@@ -34,7 +34,6 @@ const Login = ({
 
     try {
       const response = await axios.post(
-        // "https://orion21-vinted.herokuapp.com/login",
         "https://orion21-vinted.herokuapp.com/user/login",
         data
         // headers

@@ -24,7 +24,9 @@ const Offer = ({
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:3000/offer/${id}`);
+      const response = await axios.get(
+        `https://orion21-vinted.herokuapp.com//offer/${id}`
+      );
       setData(response.data);
       setIsLoading(false);
       console.log(response.data);

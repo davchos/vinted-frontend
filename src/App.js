@@ -17,10 +17,6 @@ const App = () => {
   const [title, setTitle] = useState("");
   const [sort, setSort] = useState("price-asc");
 
-  // Manages users authentification through Cookies token.
-  // The Cookie is set / unset in this function.
-  // As the a state every change will trigger a rendering.
-
   const setUserInfo = (token) => {
     if (token) {
       Cookies.set("token", token, { expires: 7 });
@@ -48,43 +44,13 @@ const App = () => {
             />
           </Route>
           <Route exact path="/offer/:id">
-            <Offer
-              setUserInfo={setUserInfo}
-              // priceMin={priceMin}
-              // priceMax={priceMax}
-              // sort={sort}
-              // title={title}
-              // setPriceMin={setPriceMin}
-              // setPriceMax={setPriceMax}
-              // setSort={setSort}
-              // setTitle={setTitle}
-            />
+            <Offer setUserInfo={setUserInfo} />
           </Route>
           <Route path="/user/signup">
-            <Signup
-              setUserInfo={setUserInfo}
-              // priceMin={priceMin}
-              // priceMax={priceMax}
-              // sort={sort}
-              // title={title}
-              // setPriceMin={setPriceMin}
-              // setPriceMax={setPriceMax}
-              // setSort={setSort}
-              // setTitle={setTitle}
-            />
+            <Signup setUserInfo={setUserInfo} />
           </Route>
           <Route path="/login">
-            <Login
-              setUserInfo={setUserInfo}
-              // priceMin={priceMin}
-              // priceMax={priceMax}
-              // sort={sort}
-              // title={title}
-              // setPriceMin={setPriceMin}
-              // setPriceMax={setPriceMax}
-              // setSort={setSort}
-              // setTitle={setTitle}
-            />
+            <Login setUserInfo={setUserInfo} />
           </Route>
           <Route path="/publish">
             <Publish setUserInfo={setUserInfo} />

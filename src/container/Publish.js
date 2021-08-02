@@ -35,7 +35,7 @@ const Publish = (setUserInfo) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/offer/publish",
+        "https://orion21-vinted.herokuapp.com/offer/publish",
         formData,
         {
           headers: {

@@ -36,7 +36,7 @@ const Signup = ({
     try {
       const response = await axios.post(
         "https://orion21-vinted.herokuapp.com/user/signup",
-        // "http://localhost:3000/user/signup",
+
         data
       );
       setUserInfo(response.data.token);

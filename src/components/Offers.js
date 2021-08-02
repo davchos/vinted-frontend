@@ -28,9 +28,7 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
       console.log(query);
       try {
         const response = await axios.get(
-          `http://localhost:3000/offers${query}`
-          // "https://orion21-vinted.herokuapp.com/offers"
-          // "http://localhost:3000/offers"
+          `https://orion21-vinted.herokuapp.com/offers${query}`
         );
         setData(response.data);
         setTotalPages(Math.ceil(response.data.count / limit));
