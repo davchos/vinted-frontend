@@ -17,17 +17,43 @@ const Home = ({
 }) => {
   return (
     <div>
-      <Header
-        setUserInfo={setUserInfo}
+      <div
+        style={{
+          position: "sticky",
+          top: "0px",
+          bottom: "120px",
+          zIndex: "100",
+        }}
+      >
+        <Header
+          setUserInfo={setUserInfo}
+          priceMin={priceMin}
+          priceMax={priceMax}
+          sort={sort}
+          title={title}
+          setPriceMin={setPriceMin}
+          setPriceMax={setPriceMax}
+          setSort={setSort}
+          setTitle={setTitle}
+        />
+        {/* <Image style={{ position: "relative", top: "100px" }} />
+        <Offers
+          style={{ position: "relative", top: "300px" }}
+          priceMin={priceMin}
+          priceMax={priceMax}
+          sort={sort}
+          title={title}
+        /> */}
+      </div>
+      {/* <Image style={{ position: "relative", top: "100px" }} />
+      <Offers
+        style={{ position: "relative", top: "300px" }}
         priceMin={priceMin}
         priceMax={priceMax}
         sort={sort}
         title={title}
-        setPriceMin={setPriceMin}
-        setPriceMax={setPriceMax}
-        setSort={setSort}
-        setTitle={setTitle}
-      />
+      /> */}
+
       <Image />
       <Offers
         priceMin={priceMin}

@@ -1,7 +1,15 @@
+.header {
+  background: white;
+  height: 90px;
+  width: 100vw;
+}
+
 .header-container {
+  /* position: fixed; */
   width: 1242px;
   height: 130px;
   margin: 0 auto;
+  background: white;
 }
 
 .header-top {
