@@ -7,17 +7,7 @@ import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 
-const Offer = ({
-  setUserInfo,
-  priceMin,
-  priceMax,
-  sort,
-  title,
-  setPriceMin,
-  setPriceMax,
-  setSort,
-  setTitle,
-}) => {
+const Offer = ({ setUserInfo }) => {
   const [item, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -29,10 +19,8 @@ const Offer = ({
       );
       setData(response.data);
       setIsLoading(false);
-      console.log(response.data);
     };
     fetchData();
-    // console.log(response.data.json);
   }, [id]);
   return isLoading ? (
     <span>En cours de chargement... </span>

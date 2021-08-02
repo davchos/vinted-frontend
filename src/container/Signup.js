@@ -24,14 +24,13 @@ const Signup = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("form");
+
     const data = {
       email: email,
       username: username,
       phone: phone,
       password: password,
     };
-    console.log(data);
 
     try {
       const response = await axios.post(
@@ -43,7 +42,6 @@ const Signup = ({
       history.push("/");
     } catch (e) {
       // manage 4XX/5XX response code
-      console.log(e);
     }
   };
   return (

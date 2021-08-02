@@ -10,9 +10,7 @@ const Item = ({ item }) => {
     product_price,
     owner,
     product_image,
-    // product_date,
   } = item;
-  console.log("item: ");
   return (
     <div className="flex-row-spacearound item">
       <div className="item-container">
@@ -38,9 +36,6 @@ const Item = ({ item }) => {
               <span className="item-info">
                 {product_details[3].COULEUR !== "" && "COULEUR"}
               </span>
-              {/* <span className="item-info">
-                {product_details[4].EMPLACEMENT !== "" && "EMPLACEMENT"}
-              </span> */}
             </div>
             <div className="item-value">
               <span className="item-info">
@@ -61,11 +56,6 @@ const Item = ({ item }) => {
                 {product_details[3].COULEUR !== null &&
                   product_details[3].COULEUR}
               </span>
-
-              {/* <span className="item-info">
-                {product_details[4].EMPLACEMENT &&
-                  product_details[4].EMPLACEMENT}
-              </span> */}
             </div>
           </div>
           <div className="item-description-middle">

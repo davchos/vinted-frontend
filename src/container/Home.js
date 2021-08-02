@@ -2,7 +2,6 @@ import "./css/Home.css";
 import Header from "../components/Header";
 import Image from "../components/Image";
 import Offers from "../components/Offers";
-import { useState } from "react";
 
 const Home = ({
   setUserInfo,

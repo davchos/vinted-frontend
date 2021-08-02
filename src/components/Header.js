@@ -1,5 +1,5 @@
 import "./css/Header.css";
-import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
+import { Link,  useHistory, useLocation } from "react-router-dom";
 import { Range } from "react-range";
 import Cookies from "js-cookie";
 import { useState } from "react";
@@ -41,10 +41,6 @@ const Header = ({
     console.log(location);
     if (location.pathname !== "/") {
       history.push("/");
-      // setTitle(event.target.value);
-
-      // console.log(location);
-    }
   };
 
   const handleClickSale = () => {
@@ -80,9 +76,6 @@ const Header = ({
                   />
                 </form>
               </div>
-              {/* {location.pathname === "/" && ( */}
-              {/* // location.pathname !== "/user/signup" && */}
-              {/* // location.pathname !== "/offer/" && ( */}
               <div className="header-bar">
                 <div className="header-sorting">
                   <span>Triez par:</span>

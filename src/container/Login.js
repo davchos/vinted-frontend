@@ -6,17 +6,7 @@ import axios from "axios";
 
 import { useHistory } from "react-router-dom";
 
-const Login = ({
-  setUserInfo,
-  priceMin,
-  priceMax,
-  sort,
-  title,
-  setPriceMin,
-  setPriceMax,
-  setSort,
-  setTitle,
-}) => {
+const Login = ({ setUserInfo }) => {
   let history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -25,12 +15,10 @@ const Login = ({
   // formulaire + axios
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("form");
     const data = {
       email: email,
       password: password,
     };
-    console.log(data);
 
     try {
       const response = await axios.post(
@@ -42,21 +30,11 @@ const Login = ({
       history.push("/publish");
     } catch (e) {
       // Manage 4XX / 5XX response code
-      console.log(e);
     }
   };
   return (
     <div>
-      <Header
-        priceMin={priceMin}
-        priceMax={priceMax}
-        sort={sort}
-        title={title}
-        setPriceMin={setPriceMin}
-        setPriceMax={setPriceMax}
-        setSort={setSort}
-        setTitle={setTitle}
-      />
+      <Header setUserInfo={setUserInfo} />
       <div className="login-container">
         <span className="login-title"> Se connecter</span>
         <form onSubmit={handleSubmit}>

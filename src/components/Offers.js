@@ -25,7 +25,6 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
   title !== "" && (query += "&title=" + title);
   useEffect(() => {
     const fetchData = async () => {
-      console.log(query);
       try {
         const response = await axios.get(
           `https://orion21-vinted.herokuapp.com/offers${query}`
@@ -46,8 +45,6 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
   }, [page, priceMin, priceMax, sort, title]);
 
   const setPagesArray = () => {
-    console.log(data.count);
-    console.log(limit);
     let tmp = [];
     for (let i = 1; i <= totalPages; i++) {
       tmp.push(0);
@@ -64,7 +61,6 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
     <div>
       <div className="offers-container">
         {data.offers.map((elem, index) => {
-          console.log(elem);
           return (
             <div key={index} className="offers-offer">
               <span className="offer-info-owner">
@@ -108,7 +104,6 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
           const update = () => {
             updatePage(index);
           };
-          console.log(" index " + index);
           return (
             <span className="offers-pages" key={index} onClick={update}>
               {index + 1}
