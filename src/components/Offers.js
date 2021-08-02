@@ -28,7 +28,7 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
       console.log(query);
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers${query}`
+          `http://localhost:3000/offers${query}`
           // "https://orion21-vinted.herokuapp.com/offers"
           // "http://localhost:3000/offers"
         );
@@ -81,7 +81,7 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
                 {elem.product_image && (
                   <img
                     className="offers-offer-image"
-                    src={elem.product_image.secure_url}
+                    src={elem.product_image[0].secure_url}
                     alt="offerItem"
                   />
                 )}

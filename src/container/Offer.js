@@ -24,30 +24,27 @@ const Offer = ({
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-      );
+      const response = await axios.get(`http://localhost:3000/offer/${id}`);
       setData(response.data);
       setIsLoading(false);
-      // console.log(response.data);
+      console.log(response.data);
     };
     fetchData();
+    // console.log(response.data.json);
   }, [id]);
   return isLoading ? (
     <span>En cours de chargement... </span>
   ) : (
     <div className="offer-container">
-      <Header
-        setUserInfo={setUserInfo}
-        priceMin={priceMin}
-        priceMax={priceMax}
-        sort={sort}
-        title={title}
-        setPriceMin={setPriceMin}
-        setPriceMax={setPriceMax}
-        setSort={setSort}
-        setTitle={setTitle}
-      />
+      <div
+        style={{
+          position: "sticky",
+          top: "0px",
+          bottom: "120px",
+        }}
+      >
+        <Header setUserInfo={setUserInfo} />
+      </div>
       <Item item={item} />
     </div>
   );

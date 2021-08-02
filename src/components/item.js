@@ -10,15 +10,15 @@ const Item = ({ item }) => {
     product_price,
     owner,
     product_image,
-    product_date,
+    // product_date,
   } = item;
-  console.log(item);
+  console.log("item: ");
   return (
     <div className="flex-row-spacearound item">
       <div className="item-container">
         <img
           className="item-image"
-          src={product_image.secure_url}
+          src={product_image[0].secure_url}
           alt="item-image"
         />
 

@@ -3,6 +3,7 @@ import Offer from "./container/Offer";
 import Home from "./container/Home";
 import Signup from "./container/Signup";
 import Login from "./container/Login";
+import Publish from "./container/Publish";
 import Cookies from "js-cookie";
 
 import { useState } from "react";
@@ -46,44 +47,47 @@ const App = () => {
               setTitle={setTitle}
             />
           </Route>
-          <Route path="/offer/:id">
+          <Route exact path="/offer/:id">
             <Offer
               setUserInfo={setUserInfo}
-              priceMin={priceMin}
-              priceMax={priceMax}
-              sort={sort}
-              title={title}
-              setPriceMin={setPriceMin}
-              setPriceMax={setPriceMax}
-              setSort={setSort}
-              setTitle={setTitle}
+              // priceMin={priceMin}
+              // priceMax={priceMax}
+              // sort={sort}
+              // title={title}
+              // setPriceMin={setPriceMin}
+              // setPriceMax={setPriceMax}
+              // setSort={setSort}
+              // setTitle={setTitle}
             />
           </Route>
           <Route path="/user/signup">
             <Signup
               setUserInfo={setUserInfo}
-              priceMin={priceMin}
-              priceMax={priceMax}
-              sort={sort}
-              title={title}
-              setPriceMin={setPriceMin}
-              setPriceMax={setPriceMax}
-              setSort={setSort}
-              setTitle={setTitle}
+              // priceMin={priceMin}
+              // priceMax={priceMax}
+              // sort={sort}
+              // title={title}
+              // setPriceMin={setPriceMin}
+              // setPriceMax={setPriceMax}
+              // setSort={setSort}
+              // setTitle={setTitle}
             />
           </Route>
           <Route path="/login">
             <Login
               setUserInfo={setUserInfo}
-              priceMin={priceMin}
-              priceMax={priceMax}
-              sort={sort}
-              title={title}
-              setPriceMin={setPriceMin}
-              setPriceMax={setPriceMax}
-              setSort={setSort}
-              setTitle={setTitle}
+              // priceMin={priceMin}
+              // priceMax={priceMax}
+              // sort={sort}
+              // title={title}
+              // setPriceMin={setPriceMin}
+              // setPriceMax={setPriceMax}
+              // setSort={setSort}
+              // setTitle={setTitle}
             />
+          </Route>
+          <Route path="/publish">
+            <Publish setUserInfo={setUserInfo} />
           </Route>
         </Switch>
       </div>

@@ -40,7 +40,7 @@ const Login = ({
         // headers
       );
       setUserInfo(response.data.token);
-      history.push("/");
+      history.push("/publish");
     } catch (e) {
       // Manage 4XX / 5XX response code
       console.log(e);

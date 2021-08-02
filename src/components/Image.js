@@ -1,11 +1,16 @@
 import "./css/Image.css";
+import { useHistory } from "react-router-dom";
 
 const Image = (props) => {
+  let history = useHistory();
+  const handleClick = () => {
+    history.push("/publish");
+  };
   return (
     <div className="image-container">
       <div className="image-texte">
         <p>Prêts à faire du tri dans vos placards ?</p>
-        <button>Vends maintenant</button>
+        <button onClick={handleClick}>Vends maintenant</button>
         <p>Découvrir comment ça marche</p>
       </div>
       <svg

@@ -50,6 +50,10 @@
   padding-top: 2px;
 }
 
+.header-logo svg {
+  margin-top: 10px;
+}
+
 .header-logo input:focus {
   outline: none;
 }
@@ -65,7 +69,7 @@
   /* border: black X 1px; */
   display: flex;
   flex-direction: row;
-  width: 620px;
+  width: 630px;
   /* height: 70px; */
 }
 .header-sorting {
@@ -73,9 +77,10 @@
   flex-direction: row;
   padding-top: 10px;
   padding-left: 20px;
-  width: 130px;
+  width: 140px;
 }
 .header-sorting > span {
+  margin-top: 5px;
   font-size: 12px;
   line-height: 12px;
 }

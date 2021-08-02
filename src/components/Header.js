@@ -47,6 +47,9 @@ const Header = ({
     }
   };
 
+  const handleClickSale = () => {
+    history.push("/publish");
+  };
   return (
     <div className="header">
       <div className="header-top">
@@ -107,7 +110,7 @@ const Header = ({
                   </div>
                 </div>
                 <Range
-                  step={50}
+                  step={5}
                   min={0}
                   max={1000}
                   values={[priceMin, priceMax]}
@@ -144,6 +147,17 @@ const Header = ({
                     />
                   )}
                 />
+                <span
+                  style={{
+                    marginTop: "10px",
+                    textAlign: "center",
+                    color: "#0dadb",
+                    fontSize: "10px",
+                    marginLeft: "5px",
+                  }}
+                >
+                  {priceMin} {priceMax}
+                </span>
               </div>
             </div>
           )}
@@ -167,7 +181,7 @@ const Header = ({
             </div>
           )}
 
-          <button> Vends tes articles</button>
+          <button onClick={handleClickSale}> Vends tes articles</button>
         </div>
       </div>
     </div>

@@ -22,7 +22,6 @@ const Home = ({
           position: "sticky",
           top: "0px",
           bottom: "120px",
-          // zIndex: "100",
         }}
       >
         <Header
@@ -36,23 +35,7 @@ const Home = ({
           setSort={setSort}
           setTitle={setTitle}
         />
-        {/* <Image style={{ position: "relative", top: "100px" }} />
-        <Offers
-          style={{ position: "relative", top: "300px" }}
-          priceMin={priceMin}
-          priceMax={priceMax}
-          sort={sort}
-          title={title}
-        /> */}
       </div>
-      {/* <Image style={{ position: "relative", top: "100px" }} />
-      <Offers
-        style={{ position: "relative", top: "300px" }}
-        priceMin={priceMin}
-        priceMax={priceMax}
-        sort={sort}
-        title={title}
-      /> */}
 
       <Image />
       <Offers
