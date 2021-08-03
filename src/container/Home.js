@@ -21,6 +21,7 @@ const Home = ({
           position: "sticky",
           top: "0px",
           bottom: "120px",
+          zIndex: "100",
         }}
       >
         <Header
