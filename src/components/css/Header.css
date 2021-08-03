@@ -139,6 +139,9 @@
   width: 500px;
   padding-top: 20px;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .header-button > div {
   display: flex;

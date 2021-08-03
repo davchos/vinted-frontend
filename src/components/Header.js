@@ -21,6 +21,13 @@ const Header = ({
 
   const handleDeconnect = () => {
     setUserInfo(null);
+    history.push("/");
+  };
+  const handleConnect = () => {
+    history.push("/login");
+  };
+  const handleSignup = () => {
+    history.push("/user/signup");
   };
   const changeSort = (tmp) => {
     setSort(tmp);
@@ -159,18 +166,18 @@ const Header = ({
         <div className="header-button">
           {token ? (
             <div>
-              <Link to="/">
-                <button onClick={handleDeconnect}> Se déconnecter</button>
-              </Link>
+              {/* <Link to="/"> */}
+              <button onClick={handleDeconnect}> Se déconnecter</button>
+              {/* </Link> */}
             </div>
           ) : (
             <div>
-              <Link to="/user/signup">
-                <button>S'inscrire</button>
-              </Link>
-              <Link to="/login">
-                <button>Se connecter</button>
-              </Link>
+              {/* <Link to="/user/signup"> */}
+              <button onClick={handleSignup}>S'inscrire</button>
+              {/* </Link> */}
+              {/* <Link to="/login"> */}
+              <button onClick={handleConnect}>Se connecter</button>
+              {/* </Link> */}
             </div>
           )}
 
