@@ -163,7 +163,7 @@ const Header = ({
           )}
         </div>
 
-        <div className="header-button">
+        <div id="header-button" className="header-button">
           {token ? (
             <div>
               {/* <Link to="/"> */}
@@ -181,7 +181,10 @@ const Header = ({
             </div>
           )}
 
-          <button onClick={handleClickSale}> Vends tes articles</button>
+          <button id="header-vend" onClick={handleClickSale}>
+            {" "}
+            Vends tes articles
+          </button>
         </div>
       </div>
     </div>

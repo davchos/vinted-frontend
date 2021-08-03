@@ -90,3 +90,18 @@
   line-height: 36px;
   letter-spacing: 0px;
 }
+
+@media (max-width: 717px) {
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .item-image,
+  .item-box {
+    width: 100%;
+  }
+}

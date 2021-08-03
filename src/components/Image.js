@@ -8,7 +8,7 @@ const Image = (props) => {
   };
   return (
     <div className="image-container">
-      <div className="image-texte">
+      <div id="image-texte" className="image-texte">
         <p>Prêts à faire du tri dans vos placards ?</p>
         <button onClick={handleClick}>Vends maintenant</button>
         <p>Découvrir comment ça marche</p>

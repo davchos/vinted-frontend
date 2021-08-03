@@ -1,0 +1,21 @@
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+  border: none;
+  background: #0dadb7;
+  border-radius: 5px;
+  width: 50%;
+  height: 36px;
+  color: white;
+  font-size: 15px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  margin: 30px auto 0 auto;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}

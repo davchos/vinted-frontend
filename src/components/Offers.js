@@ -59,10 +59,23 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
     <span>En cours de chargement... </span>
   ) : (
     <div>
-      <div className="offers-container">
+      {/* <div id="offers-pages" className="offers-container">
+        <span className="offers-pages">page:</span>
+        {pages.map((elem, index) => {
+          const update = () => {
+            updatePage(index);
+          };
+          return (
+            <span className="offers-pages" key={index} onClick={update}>
+              {index + 1}
+            </span>
+          );
+        })}
+      </div> */}
+      <div id="offers-offers" className="offers-container">
         {data.offers.map((elem, index) => {
           return (
-            <div key={index} className="offers-offer">
+            <div key={index} id="offers-offer" className="offers-offer">
               <span className="offer-info-owner">
                 {elem.owner.account.username}
               </span>
@@ -98,7 +111,7 @@ const Offers = ({ priceMin, priceMax, sort, title }) => {
           );
         })}
       </div>
-      <div className="offers-container">
+      <div id="offers-pages" className="offers-container">
         <span className="offers-pages">page:</span>
         {pages.map((elem, index) => {
           const update = () => {
