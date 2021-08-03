@@ -73,6 +73,12 @@
 }
 
 @media (max-width: 717px) {
+  .offers-offer {
+    /* display: flex;
+    flex-direction: column; */
+    margin-top: 20px;
+    /* margin-right: 5px; */
+  }
   #offers-offers {
     display: flex;
     flex-direction: column;
