@@ -6,7 +6,7 @@ import axios from "axios";
 
 import Cookies from "js-cookie";
 
-const Publish = (setUserInfo) => {
+const Publish = ({ setUserInfo }) => {
   const token = Cookies.get("token");
   const [files, setFiles] = useState();
 
